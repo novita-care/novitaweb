@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Health Care - NovitaCare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="NovitaCare makes it easier for caregivers to manage and coordinate health information with patients and their family members." />
+    <meta name="author" content="Luke Wyatt" />
+    <link rel="shortcut icon" href="assets/icons/novitacare-logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/icons/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/icons/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/icons/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="assets/icons/apple-touch-icon-57-precomposed.png" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,300,700italic,700,500&amp;subset=latin,latin-ext" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Comfortaa:400,300,700&amp;subset=latin,latin-ext" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
+    <!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="assets/css/font-awesome-ie7.min.css" /><![endif]-->
+    <!--[if lt IE 9]><script type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <style type="text/css">
+        body {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 200;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+        }
+        
+        header#Home {
+            position: relative;
+            overflow: hidden;
+            padding-top: 0px;
+            background: url(assets/images/home.jpg) 50% 0% fixed no-repeat;
+            background-size: auto;
+            min-height: 750px;
+            width: 100%;
+            min-width: 100%;
+            z-index: 0;
+        }
+        
+        .inner-top-bg {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            display: inline-block;
+            width: 100%;
+            min-width: 100%;
+            height: 100%;
+            min-height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .jumbotron {
+            background: none;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: 1;
+            width: 100%;
+            text-align: center;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        
+        .jumbotron img {
+            padding-top: 180px;
+            padding-bottom: 20px;
+        }
+        
+        .jumbotron p.lead {
+            color: #fff;
+            font-size: 120%;
+            max-width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        
+        .btn.btn-start {
+            background: rgba(0, 0, 0, 0);
+            border: 4px solid #fff;
+            color: #fff;
+            padding: 19px 24px;
+            font-size: 24px;
+            font-weight: 200;
+            margin-top: 40px;
+            z-index: 2;
+        }
+        
+        .btn.btn-start:hover {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 19px 24px;
+            font-size: 24px;
+            font-weight: 200;
+            margin-top: 40px;
+            z-index: 2;
+        }
+        
+        section {
+            padding-top: 50px;
+            padding-bottom: 85px;
+            min-height: 600px;
+            width: 100%;
+            min-width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #Mission {
+            background: url(assets/images/mission.jpg) 50% 0% fixed repeat;
+            background-size: auto 100%;
+            min-height: 650px;
+            border-top: 3px solid white;
+        }
+        
+        #Team {
+            background: url(assets/images/team.jpg) 50% 0% fixed repeat;
+            background-size: 100% 100%;
+            min-height: 650px;
+            border-top: 3px solid white;
+        }
+        
+        footer {
+            background: url(assets/images/footer.jpg) 50% 0% fixed repeat;
+            background-size: auto;
+            width: 100%;
+            min-width: 100%;
+            padding-top: 50px;
+            min-height: 725px;
+            position: relative;
+            border-top: 3px solid white;
+        }
+        
+        .color-white {
+            color: #fff;
+        }
+        
+        .color-white-dim {
+            color: rgba(52, 52, 52, 0.87);
+        }
+        
+        .panel {
+            background: rgba(250, 250, 250, 0.65);
+            margin-bottom: 30px;
+            -webkit-box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+            box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(250, 250, 250, 0.5);
+        }
+        
+        .panel-heading,
+        .panel-footer {
+            background: rgba(250, 250, 250, 0.4);
+            -webkit-box-shadow: 1px 1px 12px rgba(50, 50, 50, 0.5);
+            -moz-box-shadow: 1px 1px 12px rgba(50, 50, 50, 0.5);
+            box-shadow: 1px 1px 12px rgba(50, 50, 50, 0.5);
+        }
+        
+        .panel h3 {
+            text-shadow: 0px 1px 0px rgba(250, 250, 250, 1);
+        }
+        
+        .panel .list-group-item {
+            background: rgba(250, 250, 250, 0.7);
+        }
+        
+        .navbar {
+            background-color: #f9f9f9;
+            border: 0px;
+            box-shadow: 0px -3px 0px rgba(5, 140, 185, 1) inset;
+        }
+        
+        navbar-fixed-top {
+            z-index: 1030;
+        }
+        
+        .navbar .nav > li > a {
+            float: none;
+            padding: 15px 20px 15px;
+            color: #777777;
+            text-decoration: none;
+            text-shadow: none;
+            font-size: 14px;
+            font-wight: bold;
+            text-transform: uppercase;
+        }
+        
+        .navbar .nav > .active > a,
+        .navbar .nav > .active > a:hover,
+        .navbar .nav > .active > a:focus {
+            color: #333;
+            text-decoration: none;
+            background-color: #fff;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+        
+        .navbar .nav > .active > a,
+        .navbar .nav > .active > a:hover,
+        .navbar .nav > .active > a:focus {
+            color: #333;
+            font-weight: 600;
+            box-shadow: 0px -3px 0px rgba(7, 73, 134, 1) inset;
+        }
+        
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .thumbnail {
+            background-color: transparent;
+            border: none;
+            padding-bottom: 1.5em;
+        }
+        
+        .thumbnail img {
+            border-radius: 5%;
+            max-width: 200px;
+        }
+        
+        @media (max-width: 979px) {
+            body {
+                padding: 0px;
+            }
+            .navbar-fixed-top {
+                margin-bottom: 0px;
+            }
+            .navbar-fixed-top,
+            .navbar-fixed-bottom {
+                position: fixed;
+            }
+            .navbar .container {
+                width: auto;
+                padding: 0px 20px;
+            }
+            .navbar .brand {
+                padding-right: 10px;
+                padding-left: 10px;
+                margin: 0 0 0 15px;
+            }
+            .container {
+                padding: 0px 20px;
+            }
+            .jumbotron {
+                padding: 0px;
+                top: 30px;
+            }
+            .jumbotron img {
+                padding-top: 150px;
+            }
+            footer .page-header h3 {
+                padding-top: 100px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header#Home {
+                background: url(assets/images/home.jpg) 50% 0% fixed no-repeat;
+                background-size: auto 100%;
+            }
+            #Mission {
+                background: url(assets/images/mission.jpg) 50% 0% fixed no-repeat;
+                background-size: auto 125%;
+                background-position: 0% 25%;
+            }
+            #Team {
+                background: url(assets/images/team.jpg) 50% 0% fixed repeat;
+                background-size: auto 100%;
+            }
+            footer {
+                background: url(assets/images/footer.jpg) 50% 0% fixed no-repeat;
+                background-size: auto;
+            }
+            .jumbotron img {
+                padding: 40px 0 5px 0;
+            }
+            header#Home {
+                min-height: 600px;
+            }
+            .btn.btn-start,
+            .btn.btn-start:hover {
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 433px) {
+            .jumbotron img {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+    <nav id="topnav" class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#Home" style="padding:0px;">
+                    <img src="assets/icons/novitacare-logo-full-small.png" alt="NovitaCare" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="#Home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#Mission">Mission</a>
+                    </li>
+                    <li>
+                        <a href="#Team">Team</a>
+                    </li>
+                    <li>
+                        <a href="#Footer">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="Home">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center col-sm-12 col-lg-12">
+                        <h1 style="display:none;">NOVITACARE</h1>
+                        <img src="assets/icons/novitacare-logo-full-large.png" alt="NovitaCare" />
+                        <p class="lead">
+                            NovitaCare makes it easier for caregivers to manage and coordinate health information with patients and their family members.
+                        </p>
+                        <span id="mission-button">
+								<a class="btn btn-start btn-default" href="#Mission">Our Mission</a>
+							</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inner-top-bg"></div>
+    </header>
+    <section id="Mission">
+        <div class="container">
+            <div class="row" style="padding-bottom:25px; padding-top:25px;">
+                <div class="page-header color-white col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h2>OUR MISSION</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="color-white col-md-5">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-12">
+                            <p class="lead">
+                                There is nothing more important than family. After experiencing the broken health care system first-hand during times of need, we created a solution to unify the caregiving experience. We want you to focus on your love ones and create memories, leave managing the redundant tasks to us. Watch this video to see more.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                    <div class='embed-container'>
+                        <iframe src='https://player.vimeo.com/video/82677504' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-6">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-12" id="team-button">
+                            <a class="btn btn-start btn-default" href="#Team">Our Team</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Team">
+        <div class="container">
+            <div class="row">
+                <div class="page-header text-center color-white col-sm-12 col-lg-12" style="padding-top:25px;">
+                    <h2>OUR TEAM</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>BRANDI MARCH</h3>
+                            <h5>FOUNDER and CEO</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/brandi-march.jpg" alt="Brandi March">
+                            </div>
+                            <p>
+                                Brandi March is the Founder and CEO of NovitaCare, leading the team in exploring new ways to solve complex problems within the healthcare system while bringing her vision and direction for the company. It was her personal experience serving as a caregiver for her mother that lead to the ideas and concepts, which founded NovitaCare. Her passion for technology and helping others inspire her daily to empower people to become their own advocates.
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="mailto:brandi@novita.care">
+                                <i class="icon-envelope"></i>
+                            </a>
+                            <a class="btn btn-default" href="http://www.linkedin.com/in/brandimarch">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                            <a class="btn btn-default" href="http://www.facebook.com/novitacare">
+                                <i class="icon-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>Ben Ullrich</h3>
+                            <h5>DEVELOPMENT</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/ben-ullrich.jpg" alt="Ben Ullrich">
+                            </div>
+                            <p>Bitcoin person, working with addiction and alternative health care. Currently focusing on exposeing issues in the current medical system and speaking around the world. Previously started the Colorado Bitcoin Society and led the Bitcoin community in Colorado. Currently located in Mexico loving life on the beach helping those messed up by life and the current central medical system.
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="mailto:ben@novita.care">
+                                <i class="icon-envelope"></i>
+                            </a>
+                            <a class="btn btn-default" href="https://www.linkedin.com/in/theullrich">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>IAN HATHAWAY</h3>
+                            <h5>BUSINESS DEVELOPMENT</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/ian-hathaway.jpg" alt="Ian Hathaway">
+                            </div>
+                            <p>
+                                Ian Hathaway comes from a prestigious family of entrepreneurs, and is a motivated entrepreneur himself. Ian attended Lynn University in Boca Raton, Florida and has consulted for a host of popular brands around the US and Internationally in regards to marketing. Located in Atlanta, Georgia, Ian is a member of the Metro Atlanta Chamber of Commerce and he is actively involved in his community.
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="mailto:ian@novita.care">
+                                <i class="icon-envelope"></i>
+                            </a>
+                            <a class="btn btn-default" href="https://www.linkedin.com/in/ihathaway">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>COLIN HILL</h3>
+                            <h5>CHIEF LEGAL COUNSEL</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/colin-hill.jpg" alt="Colin Hill">
+                            </div>
+                            <p>
+                                Colin Hill is an entrepreneurial attorney with, business entity formation, contracts, funding, deal structuring, securities, and corporate compliance experience. He received his LLM in Law and Entrepreneurship from the Duke School of Law in 2014 and his J.D. from the Cumberland School of Law in 2013. His passion is creating and working with entrepreneurs, companies, and organizations focused on creating positive social change.
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="mailto:colin@hillinnovativelaw.com">
+                                <i class="icon-envelope"></i>
+                            </a>
+                            <a class="btn btn-default" href="https://www.linkedin.com/pub/%22colin%22-david-hill-esq/66/1a2/22b">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>DAVE BLACK</h3>
+                            <h5>UX and STRATEGY</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/dave-black.jpg" alt="Dave Black">
+                            </div>
+                            <p>
+                                Dave Black is a former Apple Solutions Architect and previous Brand Innovation Manager at IHG. Dave is a full-stack designer and technologist with years of experience leading product with various consumer-facing startups such as Thingsly, Maintainables, and connected vehicle platform Hustlebox.
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="mailto:dave@novita.care">
+                                <i class="icon-envelope"></i>
+                            </a>
+                            <a class="btn btn-default" href="https://www.linkedin.com/in/dblack">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>TOM HAM</h3>
+                            <h5>ADVISOR</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/tom-ham.png" alt="Tom Ham">
+                            </div>
+                            <p>
+                                Tom Ham has 30 year record of delivering valuable competitive advantage through unique uses of technology.
+                            </p>
+                            <p>
+                                His Specialties: Hands-on Internet Marketing visionary, including Search Engine Optimization (SEO), PPC, Social Media, Email Marketing, and Mobile Marketing. Creation of marketing, sales, and business development strategies to support clients. Development of business plans and pro formas for technology startups to raise capital.
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="mailto:imtomham@gmail.com">
+                                <i class="icon-envelope"></i>
+                            </a>
+                            <a class="btn btn-default" href="https://www.linkedin.com/in/tomham">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>DR. TYRONE GRANDISON</h3>
+                            <h5>ADVISOR</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/tyrone-grandison.jpg" alt="Tyrone Grandison">
+                            </div>
+                            <p>
+                                Tyrone Grandison is a White House Presidential Innovation Fellow. Tyrone received his Ph.D. in Computer Science from the Imperial College of Science, Technology &amp; Medicine in London. Dr. Grandison is an ACM Distinguished Engineer, an IEEE Senior Member and a HIMSS and BCS Fellow. He also received the IEEE Technical Achievement Award in 2010 for "pioneering contributions to Secure and Private Data Management". He has authored over a 100 technical papers and has co-invented over 47 patents.
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="mailto:tyrone@novita.care">
+                                <i class="icon-envelope"></i>
+                            </a>
+                            <a class="btn btn-default" href="https://www.linkedin.com/in/tgrandison">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>LOUISE CHANG, MD</h3>
+                            <h5>ADVISOR</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/louise-chang.jpg" alt="Louise Chang">
+                            </div>
+                            <p>
+                                Louise Chang, MD is a graduate of Stanford University and New York Medical College and the Founder &amp; CEO of HealthySmartsMD. She is committed to health advocacy and champions the efforts of people with chronic conditions to live better lives. She is an adjunct assistant professor of medicine at Emory University and volunteers at Grady Memorial Hospital in Atlanta, GA. Prior to HealthySmartsMD, she was Senior Medical Editor of WebMD and WebMD Magazine.
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="mailto:louise@novita.care">
+                                <i class="icon-envelope"></i>
+                            </a>
+                            <a class="btn btn-default" href="https://www.linkedin.com/in/louisechangmd">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>BRIAN NADOLNE, MD</h3>
+                            <h5>ADVISOR</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/brian-nadolne.jpg" alt="Brian Nadolne">
+                            </div>
+                            <p>
+                                Brian K. Nadolne, MD is a Family Physician in Marietta, Georgia and is Chair for the Family Medicine Department at Northside Hospital. He is board-certified by the American Board of Family Medicine.When Dr. Nadolne is not in the office, he is very actively involved in the Georgia Academy of Family Physicians, serving on the Board of Trustees, the education committee and the legislative committee, and The Foundation of the Board (the nonprofit arm of the GAFP).
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="mailto:support@novita.care">
+                                <i class="icon-envelope"></i>
+                            </a>
+                            <a class="btn btn-default" href="https://www.linkedin.com/in/drnadolne">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>KARIE MILLSPAUGH</h3>
+                            <h5>ADVISOR</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/karie-millspaugh.jpg" alt="Karie Millspaugh">
+                            </div>
+                            <p>
+                                Karie Millspaugh, Business and Lifestyle Coach/Author/Public Figure is the co-author to the book series, "Contagious Optimism". She has a degree in Holistic Nutrition and coaches individuals in weight-loss, self-worth and natural holistic ways of living. As a daughter of a pastor, growing up in the Midwest of the USA, she sees herself following in her father�s footsteps as they both have a heartfelt mission to help guide others to an abundant life.
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="mailto:karie@novita.care">
+                                <i class="icon-envelope"></i>
+                            </a>
+                            <a class="btn btn-default" href="https://www.linkedin.com/in/kariemillspaugh">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>DARREN NEUBERGER</h3>
+                            <h5>ADVISOR</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img src="assets/images/darren-neuberger.jpg" alt="Darren Neuberger">
+                            </div>
+                            <p>
+                                I grew up in a very athletic family and that is where I gained my competitive edge, especially being the smallest among my brothers and most of my peers. My three brothers were my motivation to excel at all things sports related and I always wanted to prove that I could play with the big kids. I have carried on this competitive edge throughout my entire life and this is the reason that I have been able to overcome many challenging experiences. My toughest challenge without a doubt was a cancer diagnosis on August 5, 2003. I was diagnosed with acute lymphoblastic leukemia at the age of 34. Surviving cancer was the wake up call for me in many ways. This wake up call has inspired me to help others overcome the obstacles that are holding them back. This is my passion.
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="btn btn-default" href="http://darrenneuberger.ca/">
+                                <i class="icon-external-link-sign"></i>
+                            </a>
+                            <a class="btn btn-default" href="https://ca.linkedin.com/in/darrenneuberger">
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="Footer">
+        <div class="container ">
+            <div class="row" style="margin-bottom:20px;">
+                <div class="page-header text-center color-white col-sm-12 col-lg-12">
+                    <h2>CONTACT US</h2>
+                </div>
+            </div>
+            <div class="row">
+                <!--<div class="color-white-dim col-md-5 col-md-offset-1 well" style="padding-bottom:35px; background-color:rgba(255, 255, 255, .75);">-->
+                <div class="color-white-dim col-md-6 col-md-offset-3 well" style="padding-bottom:35px; background-color:rgba(255, 255, 255, .75);">
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-center color-white-dim col-sm-12">
+                                <div style="padding: 25px 0 25px 0;">
+                                    <h3>Request to join our BETA program!<h3>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<form class="form-horizontal">
+										<div class="form-group">
+											<label for="beta-form-name">Name</label>
+											<input type="text" class="form-control" id="beta-form-name" placeholder="Your name...">
+										</div>
+										<div class="form-group">
+											<label for="beta-form-email">Email address</label>
+											<input type="email" class="form-control" id="beta-form-email" placeholder="Your email address...">
+										</div>
+										<div class="form-group">
+											<label for="beta-form-hear">How did you hear about us?</label>
+											<textarea  id="beta-form-hear" class="form-control" rows="3" placeholder="Tell us how you heard about us..."></textarea>
+										</div>
+										<div class="text-center">
+											<button id="beta-form-submit" type="button" class="btn btn-default">Submit</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="col-md-3 col-md-offset-1 text-center">
+						<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="258" height="338" title="Click Here to donate!" type="application/x-shockwave-flash"><param name="movie" value="//funds.gofundme.com/Widgetflex.swf" /><param name="quality" value="high" /><param name="flashvars" value="page=474dpqt4&template=5" /><param name="wmode" value="transparent" /><embed allowScriptAccess="always" src="//funds.gofundme.com/Widgetflex.swf" quality="high" flashVars="page=474dpqt4&template=5" type="application/x-shockwave-flash" wmode="transparent" width="258" height="338"></embed></object>
+					</div>-->
+				</div>
+			</div>
+			<div class="container" style="padding-top: 25px; padding-bottom:20px;">
+				<div class="row">
+					<div class="text-center color-white col-sm-12 col-lg-12">
+						<p>Copyright &#169; 2015 <a class="well" href="http://novita.care" style="margin-left:3px; padding:3px;">NovitaCare</a></p>
+						<br />
+						<a class="btn btn-default" href="mailto:support@novita.care">
+							<i class="icon-envelope"></i>
+						</a>
+						<a class="btn btn-default" href="http://www.facebook.com/novitacare">
+							<i class="icon-facebook"></i>
+						</a>
+						<a class="btn btn-default" href="http://www.twitter.com/novitacare">
+							<i class="icon-twitter"></i>
+						</a>
+						<a class="btn btn-default" href="https://www.linkedin.com/company/9412086">
+							<i class="icon-linkedin"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- JAVASCRIPT -->
+		<script type="text/javascript" src="assets/js/jquery.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.nicescroll.min.js"></script>
+		<!--<script type="text/javascript" src="assets/js/jquery.parallax-1.1.3.js"></script>-->
+		<script type="text/javascript" src="assets/js/jquery.localscroll-1.2.7-min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.scrollTo-1.4.6-min.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('#topnav').localScroll(3000);
+				jQuery('#mission-button').localScroll(5000);
+				jQuery('#team-button').localScroll(5000);
+
+				//.parallax(xPosition, speedFactor, outerHeight) options:
+				//xPosition - Horizontal position of the element
+				//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+				//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+				//jQuery('#Home').parallax("50%", 0);
+				//jQuery('#Team').parallax("50% 0%", 0.1);
+				//jQuery('#Footer').parallax("50% 0%", 0);
+				//jQuery('#Mission').parallax("50%", 0.3);
+
+				jQuery("html").niceScroll({cursorcolor:"#fff"});
+			});
+
+			jQuery('.navbar .nav > li > a').click(function(){
+				jQuery('.navbar-collapse.navbar-ex1-collapse.in').removeClass('in').addClass('collapse').css('height', '0');
+			});
+
+			jQuery('#beta-form-submit').click(function() {
+
+				var xname = jQuery('#beta-form-name').val();
+				var xemail = jQuery('#beta-form-email').val();
+				var xhear = jQuery('#beta-form-hear').val();
+
+				if ((xname === undefined) || (xname == '') || (xname == null)) {
+					jQuery('#beta-form-submit').text('Missing your name!');
+					return;
+				}
+
+				if ((xemail === undefined) || (xemail == '') || (xemail == null)) {
+					jQuery('#beta-form-submit').text('Missing your email!');
+					return;
+				}
+
+				var re = /\S+@\S+\.\S+/;
+				if (!re.test(xemail)) {
+					jQuery('#beta-form-submit').text('Bad email!');
+					return;
+				}
+
+				if ((xhear === undefined) || (xhear == '') || (xhear == null)) {
+					jQuery('#beta-form-submit').text('How\'d you hear of us?');
+					return;
+				}
+
+				jQuery.post( "subscribe.php", { name: xname, email: xemail, hear: xhear })
+					.done(function( data ) {
+
+						if ((data !== undefined) && (data != null)) {
+							var resp = eval("(" + data + ")");
+
+							if (resp.Success === true) {
+
+								jQuery('#beta-form-submit').prop('disabled', true);
+								jQuery('#beta-form-name').prop('disabled', true);
+								jQuery('#beta-form-email').prop('disabled', true);
+								jQuery('#beta-form-hear').prop('disabled', true);
+								jQuery('#beta-form-submit').text('Thanks!');
+								jQuery('#beta-form-submit').unbind();
+							}
+							else {
+								if (resp.Code == 1) {
+									jQuery('#beta-form-submit').text('Bad email?');
+								}
+								else if (resp.Code ==2) {
+									jQuery('#beta-form-submit').text('Something\'s wrong...');
+								}
+							}
+						}
+						else {
+							jQuery('#beta-form-submit').text('Try Again');
+						}
+					}
+				);
+			});
+			
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-65319412-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>
